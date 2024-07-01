@@ -100,11 +100,8 @@ void setup() {
   clear_display();
 
   delay(5000);
-
+  write_display_page();
 }
 
 void loop() {
-
-
-  write_display_page();
 }
