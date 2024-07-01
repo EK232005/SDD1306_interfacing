@@ -78,19 +78,6 @@ void clear_display() {
   send_cmd(display_ON);
 }
 
-void write_display_hort() {
-  send_cmd(display_OFF);
-  send_cmd(memory_add); send_cmd(hort_addressing);
-  send_cmd(column_add); send_cmd(0); send_cmd(127);
-  send_cmd(page_add); send_cmd(0); send_cmd(7);
-
-  for (int i = 0; i<512; i++){
-    send_data(B10101010);
-    send_data(B10101010);
-  }
-  send_cmd(display_ON);
-}
-
 void write_display_page(){
   send_cmd(memory_add);
   send_cmd(column_add); send_cmd(0); send_cmd(127);
